@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c6f3ff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;600;700;800&family=Roboto:wght@400;700&display=swap">
+    <meta name="description" content="Página oficial do Turma do Yeah Blu3, com a missão de passar novidades de AnimaVerso">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/blueskyusf-code/yeahblu3mediastorage@main/style.css">
+    <title>Turma do Yeah Blu3</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Turma do Yeah Blu3",
+        "copyrightHolder": {
+          "@type": "Organization",
+          "name": "Equipe Yeah Blu3"
+        },
+        "copyrightYear": "2026"
+      }
+    </script>
+    <style>
+      .container {
+        background-color: rgb(0,91,118);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        gap: 15px;
+      }
+      hr {
+        width: 200px;
+      }
+        body {
+    font-family: 'Poppins', sans-serif;
+}
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
+p {
+    font-family: 'Reboto', sans-serif;
+}
+button {
+   font-family: 'Poppins', sans-serif;
+   font-weight: 600;
+   background-color: hsl(207.9, 100%, 88.9%);
+   color: hsl(191, 100%, 15%);
+   border: none;
+   padding: 10px 15px; 
+   width: 90%;         
+   max-width: 300px;
+   border-radius: 8px;
+}
+
+input {
+   font-family: 'Poppins', sans-serif;
+   font-weight: 600;
+   background-color: hsl(193.7,100%,93.9%);
+   color: hsl(191, 100%, 15%);
+   border: none;
+   padding: 10px 15px;
+   width: 90%;
+   max-width: 300px;
+   border-radius: 8px;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin: 20px auto;
+}
+    </style>
+    <meta name="google-site-verification" content="-au6PyXA0-tKm8s1UbPvqBNGuBImZQAfWeLd6hR3brw" />
+     <link rel="icon" type="image/png" href="https://i.ibb.co/Xfzzs9SS/76-Sem-T-tulo-20260610205802.png">
+     <script src="/engine-notification.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Turma do Yeah Blu3</h1>
+      <p id="p1">Seja bem vindo ao site oficial do Turma do Yeah Blu3!</p>
+      <br>
+      <div class="form-group">
+      <input type="text" id="name" placeholder="Digite seu nome...">
+      <button onclick="saveData()" id="buttonsave">Salvar</button>
+  </div>
+      <h2 id="welcome"></h2>
+      <button onclick="acessarcanal()" id="channel">Canal</button>
+      <script>
+function acessarcanal() {
+  window.location.href = "/canal/";
+}
+const inputName = document.getElementById("name");
+const buttonSave = document.getElementById("buttonsave");
+const buttonChannel = document.getElementById("channel");
+const welcomeElement = document.getElementById("welcome");
+
+document.addEventListener("DOMContentLoaded", function() {
+    let dadoSalvo = localStorage.getItem("nomeUsuario");
+    
+    if (dadoSalvo) {
+        if (inputName) inputName.style.display = "none";
+        if (buttonSave) buttonSave.style.display = "none";
+        
+        if (buttonChannel) {
+            buttonChannel.style.display = "inline-block";
+            buttonChannel.disabled = false;
+        }
+        
+        if (welcomeElement) {
+            welcomeElement.textContent = "Bem-vindo de volta, " + dadoSalvo + "!";
+        }
+    } else {
+        if (buttonChannel) {
+            buttonChannel.style.display = "none";
+            buttonChannel.disabled = true;
+        }
+    }
+});
+
+function saveData() {
+    let valorDigitado = inputName.value.trim();
+
+    if (valorDigitado !== "") {
+        localStorage.setItem("nomeUsuario", valorDigitado);
+        
+        if (inputName) inputName.style.display = "none";
+        if (buttonSave) buttonSave.style.display = "none";
+        
+        if (buttonChannel) {
+            buttonChannel.style.display = "inline-block";
+            buttonChannel.disabled = false;
+        }
+        
+        if (welcomeElement) {
+            welcomeElement.textContent = "Bem-vindo de volta, " + valorDigitado + "!";
+        }
+    }
+}
+
+
+      </script>
+      </div>
+  </body>
+</html>
