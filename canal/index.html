@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c6f3ff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;600;700;800&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/blueskyusf-code/yeahblu3mediastorage@main/style.css">
+    <title>Turma do Yeah Blu3 - Página do canal</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Turma do Yeah Blu3",
+        "copyrightHolder": {
+          "@type": "Organization",
+          "name": "Equipe Yeah Blu3"
+        },
+        "copyrightYear": "2026"
+      }
+    </script>
+    <style>
+      .container {
+        background-color: rgb(0,91,118);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+      hr {
+        width: 200px;
+      }
+      body {
+    font-family: 'Poppins', sans-serif;
+}
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
+p {
+    font-family: 'Reboto', sans-serif;
+}
+button {
+   font-family: 'Poppins', sans-serif;
+   font-weight: 600;
+   background-color: hsl(207.9, 100%, 88.9%);;
+   color: hsl(191, 100%, 15%);
+   border: none;
+   padding: 10px 24px;
+   border-radius: 8px;
+}
+    </style>
+    <script>
+      function acessarmenu() {
+        window.location.href = "/";
+      }
+    window.onload = function() {
+    let dadoSalvo = localStorage.getItem("nomeUsuario");
+    
+    let welcomeElement = document.getElementById("welcome");
+
+    if (dadoSalvo) {
+        welcomeElement.textContent = "Novidades pra você, " + dadoSalvo + "!";
+    } else {
+        welcomeElement.textContent = "Novidades pra você, Visitante!";
+    }
+};
+</script>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/Xfzzs9SS/76-Sem-T-tulo-20260610205802.png">
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="welcome"></h1>
+      <br>
+      <h2>Você acredita que no AnimaVerso já teve dois virus?</h2>
+      <p>Heartopia e Op ficam no mesmo universo, no heartopia já aconteceu uma epoca que chamavam de Star Infect (ou Mine Infect), no Op foi quase igual, o virus chamado Misticus infectou Op</p>
+      <h2>Você acredita que a turma acabou de lançar uma série de festa junina?</h2>
+      <p>exato, uma série acabou de ser lançada e vai ter muita coisa legal pra frente!</p>
+      <button onclick="acessarmenu()">Voltar ao Menu</button>
+ </div>
+  </body>
+</html>
