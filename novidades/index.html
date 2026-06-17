@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c6f3ff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;600;700;800&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/blueskyusf-code/yeahblu3mediastorage@main/style.css">
+    <title>Turma do Yeah Blu3 - Novidades</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Turma do Yeah Blu3",
+        "copyrightHolder": {
+          "@type": "Organization",
+          "name": "Equipe Yeah Blu3"
+        },
+        "copyrightYear": "2026"
+      }
+    </script>
+    <style>
+      .container {
+        background-color: rgb(0,91,118);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: rgb(0,91,118);
+      }
+      h1, h2, h3 {
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+      }
+      p {
+        font-family: 'Roboto', sans-serif;
+        color: #e0f7ff;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+      button {
+         font-family: 'Poppins', sans-serif;
+         font-weight: 600;
+         background-color: hsl(207.9, 100%, 88.9%);
+         color: hsl(191, 100%, 15%);
+         border: none;
+         padding: 12px 28px;
+         border-radius: 8px;
+         cursor: pointer;
+         margin-top: 15px;
+         transition: transform 0.2s;
+      }
+      button:hover {
+        transform: scale(1.05);
+      }
+      
+      .caixa-novidade {
+        display: none;
+        max-width: 600px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 12px;
+        border: 2px solid hsl(207.9, 100%, 88.9%);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      }
+      
+      .erro-mensagem {
+        display: none;
+        color: #ffb3b3;
+        max-width: 500px;
+      }
+      .erro-mensagem h2 {
+        color: #ffb3b3;
+      }
+    </style>
+    <meta name="google-site-verification" content="-au6PyXA0-tKm8s1UbPvqBNGuBImZQAfWeLd6hR3brw" />
+    <link rel="icon" type="image/png" href="https://i.ibb.co/Xfzzs9SS/76-Sem-T-tulo-20260610205802.png">
+  </head>
+  <body>
+    <div class="container">
+
+      <div id="erro" class="erro-mensagem">
+        <h2>Erro: Esta hashtag <b>não existe</b></h2>
+        <p>Verifique o hashtag na <b>URL</b> se não errou</p>
+      </div>
+      <div id="n1" class="caixa-novidade">
+        <h2><b>#1</b> Chegou coisas novas no site</h2>
+        <p>Versão 2.5 do site trás um monte de coisa nova, notificações/notícias novas</p>
+      </div>
+    </div>
+
+    <script>
+      const parametros = new URLSearchParams(window.location.search);
+      const numeroNovidade = parametros.get('novidade');
+      if (numeroNovidade) {
+          const elementoAlvo = document.getElementById('n' + numeroNovidade);
+
+          if (elementoAlvo) {
+              elementoAlvo.style.display = 'block';
+          } else {
+              document.getElementById('erro').style.display = 'block';
+          }
+      } else {
+          document.getElementById('erro').style.display = 'block';
+      }
+    </script>
+  </body>
+</html>
